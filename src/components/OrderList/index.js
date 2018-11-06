@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import OrderItem from '../OrderItem';
 import Header from '../Header';
+import { data } from './order.js'
 
 class OrderList extends Component {
 
@@ -10,14 +11,8 @@ class OrderList extends Component {
   }
 
   componentDidMount(){
-    fetch('/mock/order.json').then(res => {
-      if(res.ok){
-        res.json().then(data => {
-          this.setState({
-            data: data
-          })
-        })
-      }
+    this.setState({
+      data: data
     })
   }
   
